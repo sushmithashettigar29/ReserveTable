@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "The Catalyzer",
+    "category": "Italian",
+    "price": "$16.00",
+    "image": "https://dummyimage.com/420x260"
+  },
+  {
+    "id": 2,
+    "name": "Shooting Stars",
+    "category": "French",
+    "price": "$21.15",
+    "image": "https://dummyimage.com/421x261"
+  },
+  {
+    "id": 3,
+    "name": "Ocean Breeze",
+    "category": "Seafood",
+    "price": "$18.50",
+    "image": "https://dummyimage.com/422x262"
+  },
+  {
+    "id": 4,
+    "name": "Spice Symphony",
+    "category": "Indian",
+    "price": "$14.25",
+    "image": "https://dummyimage.com/423x263"
+  },
+  {
+    "id": 5,
+    "name": "Burger Hub",
+    "category": "Fast Food",
+    "price": "$10.00",
+    "image": "https://dummyimage.com/424x264"
+  },
+  {
+    "id": 6,
+    "name": "Green Garden",
+    "category": "Vegan",
+    "price": "$12.75",
+    "image": "https://dummyimage.com/425x265"
+  },
+  {
+    "id": 7,
+    "name": "Sushi World",
+    "category": "Japanese",
+    "price": "$22.30",
+    "image": "https://dummyimage.com/426x266"
+  },
+  {
+    "id": 8,
+    "name": "Taco Fiesta",
+    "category": "Mexican",
+    "price": "$11.50",
+    "image": "https://dummyimage.com/427x267"
+  },
+  {
+    "id": 9,
+    "name": "BBQ Barn",
+    "category": "American",
+    "price": "$19.00",
+    "image": "https://dummyimage.com/428x268"
+  },
+  {
+    "id": 10,
+    "name": "Pasta Palace",
+    "category": "Italian",
+    "price": "$17.80",
+    "image": "https://dummyimage.com/429x269"
+  }
+]

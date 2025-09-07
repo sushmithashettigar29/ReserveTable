@@ -1,11 +1,23 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import ListingsPage from "./pages/ListingsPage";
+import ProfilePage from "./pages/ProfilePage";
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="p-8 bg-white rounded-lg shadow-md text-center">
-        <h1 className="text-2xl font-bold mb-2">ReserveTable</h1>
-        <p className="text-gray-600">Tailwind + Vite setup ✅</p>
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/restaurants" element={<ListingsPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+        </main>
       </div>
-    </div>
+    </BrowserRouter>
   )
 }
 
