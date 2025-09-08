@@ -6,21 +6,21 @@ function TestimonialsSection() {
       id: 1,
       name: "Alice Johnson",
       role: "Food Blogger",
-      image: "https://dummyimage.com/302x302",
+      image: "p1.jpg",
       text: "Absolutely loved the ambiance and the food at this restaurant! The pasta was perfectly cooked and the desserts were heavenly. Highly recommend!"
     },
     {
       id: 2,
       name: "Michael Smith",
       role: "Regular Customer",
-      image: "https://dummyimage.com/300x300",
+      image: "p3.jpg",
       text: "A wonderful dining experience every time. The staff is friendly, and the dishes are always fresh and delicious. Great place for family dinners!"
     },
     {
       id: 3,
       name: "Sophia Lee",
       role: "Food Critic",
-      image: "https://dummyimage.com/305x305",
+      image: "p2.jpg",
       text: "The flavors are exceptional, and the restaurant pays attention to every detail. From the appetizers to the desserts, everything is top-notch. Truly a hidden gem!"
     }
   ];

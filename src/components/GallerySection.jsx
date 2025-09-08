@@ -22,21 +22,21 @@ function GallerySection() {
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/500x300"
+                src="f1.jpg"
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/501x301"
+                src="f2.jpg"
               />
             </div>
             <div className="md:p-2 p-1 w-full">
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="https://dummyimage.com/600x360"
+                src="f3.jpg"
               />
             </div>
           </div>
@@ -46,21 +46,21 @@ function GallerySection() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="https://dummyimage.com/601x361"
+                src="f4.jpg"
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/502x302"
+                src="f5.jpg"
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/503x303"
+                src="f6.jpg"
               />
             </div>
           </div>

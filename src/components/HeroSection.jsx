@@ -29,7 +29,7 @@ function HeroSection() {
           <img
             className="object-cover object-center rounded"
             alt="hero"
-            src="https://dummyimage.com/720x600"
+            src="hero.jpg" width={500}
           />
         </div>
       </div>

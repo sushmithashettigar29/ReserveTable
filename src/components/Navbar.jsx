@@ -1,17 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout } = useContext(AuthContext);
 
   return (
-    <header className="text-gray-600 body-font">
+    <header className="text-gray-600 body-font shadow">
       <div className="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
-        {/* Logo / Brand */}
-        <Link
-          to="/"
-          className="flex title-font font-medium items-center text-gray-900"
-        >
+        <Link to="/" className="flex title-font font-medium items-center text-gray-900">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -27,7 +25,6 @@ function Navbar() {
           <span className="ml-3 text-xl">ReserveTable</span>
         </Link>
 
-        {/* Hamburger Button (Mobile) */}
         <button
           className="md:hidden inline-flex items-center p-2 ml-3 text-gray-700 hover:text-gray-900 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -40,50 +37,44 @@ function Navbar() {
             viewBox="0 0 24 24"
           >
             {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
 
-        {/* Navigation Links (Desktop) */}
+        {/* Desktop Menu */}
         <nav className="hidden md:flex md:ml-auto items-center text-base">
-          <Link to="/" className="mr-5 hover:text-gray-900">
-            Home
-          </Link>
-          <Link to="/restaurants" className="mr-5 hover:text-gray-900">
-            Restaurants
-          </Link>
-          <Link to="/profile" className="mr-5 hover:text-gray-900">
-            Profile
-          </Link>
+          <Link to="/" className="mr-5 hover:text-gray-900">Home</Link>
+          <Link to="/restaurants" className="mr-5 hover:text-gray-900">Restaurants</Link>
+          {user && <span className="mr-5 font-medium">{user.name}</span>}
         </nav>
 
-        {/* Call to Action Button (Desktop) */}
         <div className="hidden md:flex">
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base">
-            Login
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
+          {!user ? (
+            <Link
+              to="/signin"
+              className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base"
             >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+              Login / Signup
+            </Link>
+          ) : (
+            <>
+              <Link
+                to="/profile"
+                className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base"
+              >
+                Profile
+              </Link>
+              <button
+                onClick={logout}
+                className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base"
+              >
+                Logout
+              </button>
+            </>
+          )}
         </div>
       </div>
 
@@ -91,18 +82,17 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <nav className="flex flex-col items-center p-4 space-y-3">
-            <Link to="/" className="hover:text-indigo-600" onClick={() => setIsOpen(false)}>
-              Home
-            </Link>
-            <Link to="/restaurants" className="hover:text-indigo-600" onClick={() => setIsOpen(false)}>
-              Restaurants
-            </Link>
-            <Link to="/profile" className="hover:text-indigo-600" onClick={() => setIsOpen(false)}>
-              Profile
-            </Link>
-            <button className=" bg-gray-100 py-2 px-3 rounded hover:bg-gray-200">
-              Login
-            </button>
+            <Link to="/" className="hover:text-indigo-600" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/restaurants" className="hover:text-indigo-600" onClick={() => setIsOpen(false)}>Restaurants</Link>
+            {user && <span className="hover:text-indigo-600">{user.name}</span>}
+            {!user ? (
+              <Link to="/signin" className="bg-gray-100 py-2 px-3 rounded hover:bg-gray-200" onClick={() => setIsOpen(false)}>Login / Signup</Link>
+            ) : (
+              <>
+                <Link to="/profile" className="bg-gray-100 py-2 px-3 rounded hover:bg-gray-200" onClick={() => setIsOpen(false)}>Profile</Link>
+                <button onClick={logout} className="bg-gray-100 py-2 px-3 rounded hover:bg-gray-200">Logout</button>
+              </>
+            )}
           </nav>
         </div>
       )}
