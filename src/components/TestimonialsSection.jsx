@@ -26,25 +26,42 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container mx-auto max-w-7xl px-6 py-24">
-        <h1 className="text-3xl font-medium title-font text-gray-900 mb-12 text-center">
-          Customer Reviews
+    <section className="text-gray-600 body-font bg-gray-50">
+      <div className="container mx-auto max-w-7xl px-6 py-20">
+        {/* Title */}
+        <h1 className="sm:text-5xl text-3xl font-extrabold tracking-tight text-gray-900 mb-12 text-center">
+          What Our <span className="red-text">Customers</span> Say
         </h1>
-        <div className="flex flex-wrap -m-4">
+
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t) => (
-            <div key={t.id} className="lg:w-1/3 lg:mb-0 mb-6 p-4">
-              <div className="h-full text-center">
-                <img
-                  alt={t.name}
-                  className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                  src={t.image}
-                />
-                <p className="leading-relaxed">{t.text}</p>
-                <span className="inline-block h-1 w-10 rounded bg-yellow-500 mt-6 mb-4"></span>
-                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">{t.name}</h2>
-                <p className="text-gray-500">{t.role}</p>
-              </div>
+            <div
+              key={t.id}
+              className="bg-white  p-6 text-center hover:shadow-lg transition duration-300"
+            >
+              {/* Avatar */}
+              <img
+                alt={t.name}
+                className="w-16 h-16 mb-4 object-cover object-center rounded-full mx-auto border-2 border-orange-200 shadow-sm"
+                src={t.image}
+              />
+
+              {/* Review Text */}
+              <p className="leading-relaxed text-sm text-gray-700 italic">
+                “{t.text}”
+              </p>
+
+              {/* Divider */}
+              <span className="inline-block h-1 w-10 rounded bg-orange-400 mt-5 mb-3"></span>
+
+              {/* Name & Role */}
+              <h2 className="text-gray-900 font-semibold text-base">
+                {t.name}
+              </h2>
+              <p className="text-gray-500 text-xs uppercase tracking-wide">
+                {t.role}
+              </p>
             </div>
           ))}
         </div>

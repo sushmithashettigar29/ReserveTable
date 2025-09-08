@@ -7,7 +7,7 @@ function HeroSection() {
         {/* Left Side (Text) */}
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
           <h1 className="title-font sm:text-5xl text-3xl mb-6 font-extrabold text-gray-900 leading-snug">
-            <span className="block orange-text sm:text-4xl caprasimo">
+            <span className="block orange-text sm:text-4xl">
               Book Your
             </span>
             <span className="block text-6xl sm:text-7xl inter text-gray-800">

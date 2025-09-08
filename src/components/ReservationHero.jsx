@@ -2,14 +2,15 @@ import ReservationSection from "./ReservationSection";
 
 function ReservationHero({ restaurantName }) {
   return (
-    <section className="text-gray-600 body-font min-h-screen flex flex-col items-center justify-center py-12">
+    <section className="text-gray-600 body-font min-h-screen flex flex-col items-center justify-center py-20">
       {/* Title */}
-      <div className="text-center mb-12">
-        <h1 className="text-3xl font-semibold text-gray-900 mb-2">
-          Reserve Your Table Easily
+      <div className="text-center mb-8">
+        <h1 className="sm:text-5xl text-3xl font-extrabold tracking-tight text-gray-900 mb-4">
+          Reserve Your <span className="orange-text">Table</span> Easily
         </h1>
-        <p className="text-gray-600 text-base">
-          Fill out the form to book a table at your favorite restaurant.
+        <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          <span className="font-medium">Fill out the form</span> to book a table at your favorite restaurant and enjoy a{" "}
+          <span className="italic text-gray-500">seamless dining experience.</span>
         </p>
       </div>
 
@@ -18,7 +19,7 @@ function ReservationHero({ restaurantName }) {
         {/* Left: Image */}
         <div className="md:w-1/2 w-full flex justify-center">
           <img
-            className="object-cover object-center rounded max-h-[450px] w-full"
+            className="object-cover object-center shadow-md max-h-[480px] w-full hover:shadow-xl transition duration-300"
             alt="reservation"
             src="/f1.jpg"
           />
@@ -26,7 +27,7 @@ function ReservationHero({ restaurantName }) {
 
         {/* Right: Form */}
         <div className="md:w-1/2 w-full flex justify-center">
-          <div className="w-full max-w-md">
+          <div className="w-full">
             <ReservationSection restaurantName={restaurantName} />
           </div>
         </div>
