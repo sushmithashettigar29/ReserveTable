@@ -10,9 +10,9 @@ function Navbar() {
   return (
     <header className="text-gray-600 body-font cream-bg sticky top-0 z-50">
       <div className="container mx-auto flex flex-wrap py-5 px-25 flex-row items-center justify-between">
-        <Link to="/" className="flex title-font font-medium items-center space-x-2 text-gray-900">
+        <Link to="/" className=" flex title-font font-bold items-center space-x-2 text-gray-900">
           <ChefHat className="h-6 w-6 text-gray-800 orange-text" />
-          <span className="text-xl font-bold red-text">ReserveTable</span>
+          <span className="text-xl font-extrabold red-text">ReserveTable</span>
         </Link>
 
         <button

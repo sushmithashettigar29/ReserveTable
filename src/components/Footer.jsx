@@ -10,7 +10,7 @@ function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <ChefHat className="h-6 w-6 text-gray-800 orange-text" />
-              <span className="text-xl font-bold red-text">ReserveTable</span>
+              <span className="text-xl font-bold red-text title-font">ReserveTable</span>
             </div>
             <p className="text-gray-500">
               Simplifying your dining experience with easy online reservations.
