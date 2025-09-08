@@ -4,69 +4,79 @@
     "name": "The Catalyzer",
     "category": "Italian",
     "price": "$16.00",
-    "image": "f1.jpg"
+    "image": "f1.jpg",
+    "location": "Rome"
   },
   {
     "id": 2,
     "name": "Shooting Stars",
     "category": "French",
     "price": "$21.15",
-    "image": "f2.jpg"
+    "image": "f2.jpg",
+    "location": "Paris"
   },
   {
     "id": 3,
     "name": "Ocean Breeze",
     "category": "Seafood",
     "price": "$18.50",
-    "image": "f3.jpg"
+    "image": "f3.jpg",
+    "location": "Goa"
   },
   {
     "id": 4,
     "name": "Spice Symphony",
     "category": "Indian",
     "price": "$14.25",
-    "image": "f4.jpg"
+    "image": "f4.jpg",
+    "location": "Mumbai"
   },
   {
     "id": 5,
     "name": "Burger Hub",
     "category": "Fast Food",
     "price": "$10.00",
-    "image": "f5.jpg"
+    "image": "f5.jpg",
+    "location": "New York"
   },
   {
     "id": 6,
     "name": "Green Garden",
     "category": "Vegan",
     "price": "$12.75",
-    "image": "f6.jpg"
+    "image": "f6.jpg",
+    "location": "San Francisco"
   },
   {
     "id": 7,
     "name": "Sushi World",
     "category": "Japanese",
     "price": "$22.30",
-    "image": "f7.jpg"
+    "image": "f7.jpg",
+    "location": "Tokyo"
   },
   {
     "id": 8,
     "name": "Taco Fiesta",
     "category": "Mexican",
     "price": "$11.50",
-    "image": "f8.jpg"
+    "image": "f8.jpg",
+    "location": "Mexico City"
   },
   {
     "id": 9,
     "name": "BBQ Barn",
     "category": "American",
     "price": "$19.00",
-    "image": "f9.jpg"
+    "image": "f9.jpg",
+    "location": "Texas"
   },
   {
     "id": 10,
     "name": "Pasta Palace",
     "category": "Italian",
     "price": "$17.80",
-    "image": "f10.jpg"
+    "image": "f10.jpg",
+    "location": "Florence"
   }
 ]
