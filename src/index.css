@@ -118,3 +118,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.red-bg{
+  background: #D62809;
+}
+.red-text{
+  color: #D62809;
+}
+
+.orange-bg{
+  background: #ED8846;
+}
+
+.orange-text{
+  color: #ED8846;
+}

@@ -41,7 +41,7 @@ function SignUp() {
       {/* Right side - Form */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-8">
         <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
-          <h1 className="text-3xl font-bold text-center text-gray-800">
+          <h1 className="text-3xl font-bold text-center orange-text">
             Sign Up
           </h1>
           <p className="text-center text-gray-500 text-sm mb-4">
@@ -61,7 +61,7 @@ function SignUp() {
               placeholder="Enter your full name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-2 border focus:outline-none"
               required
             />
           </div>
@@ -77,7 +77,7 @@ function SignUp() {
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-2 border focus:outline-none "
               required
             />
           </div>
@@ -93,18 +93,18 @@ function SignUp() {
               placeholder="Enter your password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-2 border focus:outline-none"
               required
             />
           </div>
 
-          <button className="w-full bg-yellow-500 text-white py-2 rounded font-medium hover:bg-yellow-600 transition">
+          <button className="w-full orange-bg text-white py-2  font-medium">
             Sign Up
           </button>
 
           <p className="mt-4 text-sm text-center text-gray-600">
             Already have an account?{" "}
-            <Link to="/signin" className="text-yellow-500 font-medium">
+            <Link to="/signin" className="orange-text font-medium">
               Sign In
             </Link>
           </p>

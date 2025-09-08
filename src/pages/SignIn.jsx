@@ -40,7 +40,7 @@ function SignIn() {
       {/* Right side - Form */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-8">
         <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
-          <h1 className="text-3xl font-bold text-center text-gray-800">
+          <h1 className="text-3xl font-bold text-center red-text">
             Sign In
           </h1>
           <p className="text-center text-gray-500 text-sm mb-4">
@@ -60,7 +60,7 @@ function SignIn() {
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-2 border focus:outline-none"
               required
             />
           </div>
@@ -79,18 +79,18 @@ function SignIn() {
               placeholder="Enter your password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full p-2 border focus:outline-none"
               required
             />
           </div>
 
-          <button className="w-full bg-yellow-500 text-white py-2 rounded font-medium hover:bg-yellow-600 transition">
+          <button className="w-full red-bg text-white py-2 font-medium transition">
             Sign In
           </button>
 
           <p className="mt-4 text-sm text-center text-gray-600">
             Don't have an account?{" "}
-            <Link to="/signup" className="text-yellow-500 font-medium">
+            <Link to="/signup" className="red-text font-medium">
               Sign Up
             </Link>
           </p>

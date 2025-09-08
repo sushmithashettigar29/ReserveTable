@@ -64,7 +64,7 @@ function ReservationSection({ restaurantName }) {
   };
 
   return (
-    <section className="w-full flex flex-col items-center">
+    <section id="reservation"  className="w-full flex flex-col items-center">
       <div className="w-full max-w-4xl p-8">
         {/* <div className="text-center mb-8">
           <h1 className="text-3xl font-semibold text-gray-900 mb-2">
