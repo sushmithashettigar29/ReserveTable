@@ -6,7 +6,7 @@ function StatsSection() {
       <div className="container px-6 py-24 mx-auto">
         {/* Title + Subtitle */}
         <div className="flex flex-col text-center w-full mb-16">
-          <h1 className="sm:text-5xl text-3xl font-bold tracking-tight text-gray-900 mb-4">
+          <h1 className="sm:text-5xl text-3xl font-extrabold tracking-tight text-gray-900 mb-4">
             Why Choose <span className="orange-text">ReserveTable</span>?
           </h1>
           <p className="lg:w-2/3 mx-auto text-lg text-gray-700 leading-relaxed">

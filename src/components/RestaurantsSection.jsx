@@ -13,74 +13,83 @@ function RestaurantsSection() {
   );
 
   const handleReserve = (restaurant) => {
-    navigate(`/reserve/${restaurant}`); // go to reservation page
+    navigate(`/reserve/${restaurant}`);
   };
 
   return (
-    <section className="text-gray-600 body-font w-full">
+    <section className="text-gray-600 body-font w-full bg-gray-50">
       {/* Full-width orange header */}
-      <div className="bg-orange-400 w-full p-4">
-        <h1 className="font-bold text-2xl text-white text-center">
-          Restaurants
+      <div className="w-full text-center mt-10">
+        <h1 className="sm:text-5xl text-3xl font-extrabold tracking-tight text-gray-900">
+          Explore Our <span className="orange-text">Restaurants</span>
         </h1>
+        <p className="mt-4 text-base text-gray-600 max-w-2xl mx-auto">
+          Discover top-rated restaurants and reserve your table with ease.
+        </p>
       </div>
 
       {/* Centered content */}
-      <div className="mx-auto max-w-7xl px-6 py-10">
+      <div className="mx-auto max-w-7xl px-6 pt-10 pb-20">
         {/* Search Box */}
-        <div className="flex justify-center mb-6 mt-4">
+        <div className="flex justify-center mb-10">
           <input
             type="text"
             placeholder="Search restaurants..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-2/3 p-2 border rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="w-2/3 md:w-1/2 p-3 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
         </div>
 
         {/* Restaurant Grid */}
-        <div className="flex flex-wrap -m-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredRestaurants.map((res) => (
-            <div key={res.id} className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <div className="border p-4 hover:shadow-lg transition relative">
-                <a className="block relative h-48 rounded overflow-hidden">
-                  <img
-                    alt={res.name}
-                    className="object-cover object-center w-full h-full block"
-                    src={res.image}
-                  />
-                </a>
-                <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                    {res.category}
-                  </h3>
-                  <h2 className="text-gray-900 title-font text-lg font-medium">
-                    {res.name}
-                  </h2>
-                  <p className="mt-1">{res.price}</p>
-                </div>
+            <div
+              key={res.id}
+              className="border  overflow-hidden shadow-sm hover:shadow-md transition duration-300 relative"
+            >
+              {/* Image */}
+              <a className="block relative h-48">
+                <img
+                  alt={res.name}
+                  className="object-cover object-center w-full h-full"
+                  src={res.image}
+                />
+              </a>
 
-                {/* Favorite Button */}
-                <button
-                  className={`absolute top-2 right-2 px-2 py-1.4 rounded-full ${
-                    user?.favorites?.some((fav) => fav.id === res.id)
-                      ? "bg-yellow-500 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-yellow-500 hover:text-white"
-                  }`}
-                  onClick={() => toggleFavorite(res)}
-                  title="Add to Favorites"
-                >
-                  ♥
-                </button>
+              {/* Details */}
+              <div className="p-4">
+                <h3 className="text-xs text-gray-500 tracking-wide uppercase mb-1">
+                  {res.category}
+                </h3>
+                <h2 className="text-lg font-semibold text-gray-900 leading-snug">
+                  {res.name}
+                </h2>
+                <p className="mt-1 text-sm text-gray-700 font-medium">
+                  {res.price}
+                </p>
 
                 {/* Reserve Button */}
                 <button
-                  className="mt-3 w-full bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600"
+                  className="mt-4 w-full orange-bg text-white py-2 px-4 font-medium hover:bg-orange-500 transition"
                   onClick={() => handleReserve(res.name)}
                 >
                   Reserve Table
                 </button>
               </div>
+
+              {/* Favorite Button */}
+              <button
+                className={`absolute top-3 right-3 px-2.5 py-1.5 rounded-full text-sm shadow-sm ${
+                  user?.favorites?.some((fav) => fav.id === res.id)
+                    ? "orange-bg text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+                onClick={() => toggleFavorite(res)}
+                title="Add to Favorites"
+              >
+                ♥
+              </button>
             </div>
           ))}
         </div>

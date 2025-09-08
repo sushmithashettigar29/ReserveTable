@@ -105,7 +105,7 @@ function ContactSection() {
           </div>
 
           {/* Button */}
-          <button className="text-white orange-bg border-0 py-3 px-6 focus:outline-none text-lg font-semibold transition duration-200">
+          <button className="text-white orange-bg border-0 py-3 px-6 focus:outline-none text-lg font-bold transition duration-200">
             Send Message
           </button>
 
