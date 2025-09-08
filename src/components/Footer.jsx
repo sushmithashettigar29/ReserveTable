@@ -3,7 +3,7 @@ import { ChefHat, Clock, MapPin } from "lucide-react"; // Make sure you have luc
 
 function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-600 py-12 px-4">
+    <footer className="bg-gray-100 text-gray-600 py-15 px-25">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
