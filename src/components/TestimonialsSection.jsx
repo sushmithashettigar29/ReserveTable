@@ -27,7 +27,7 @@ function TestimonialsSection() {
 
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container mx-auto max-w-7xl px-6 py-24">
         <h1 className="text-3xl font-medium title-font text-gray-900 mb-12 text-center">
           Customer Reviews
         </h1>

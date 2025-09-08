@@ -3,7 +3,7 @@ import RestaurantsSection from '../components/RestaurantsSection'
 
 function ListingsPage() {
   return (
-   <div className="p-6">
+   <div>
       <RestaurantsSection/>
     </div>
   )

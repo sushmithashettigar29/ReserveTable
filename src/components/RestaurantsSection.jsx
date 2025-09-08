@@ -1,44 +1,34 @@
-import { useState } from "react";
-import ReservationSection from "./ReservationSection";
-import restaurantsData from "../data/restaurants.json"; 
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import restaurantsData from "../data/restaurants.json";
 
 function RestaurantsSection() {
+  const [search, setSearch] = useState("");
+  const { user, toggleFavorite } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const [search, setSearch] = useState("");
-  const [favorites, setFavorites] = useState([]);
-  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
-  const [showReservation, setShowReservation] = useState(false);
-
-  // Filter restaurants by search query
   const filteredRestaurants = restaurantsData.filter((res) =>
     res.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  const toggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id]
-    );
-  };
-
   const handleReserve = (restaurant) => {
-    setSelectedRestaurant(restaurant);
-    setShowReservation(true);
-  };
-
-  const closeReservation = () => {
-    setShowReservation(false);
-    setSelectedRestaurant(null);
+    navigate(`/reserve/${restaurant}`); // go to reservation page
   };
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container px-5 py-8 mx-auto">
-        <h1 className="text-3xl font-medium title-font text-gray-900 mb-6 text-center">
+    <section className="text-gray-600 body-font w-full">
+      {/* Full-width orange header */}
+      <div className="bg-orange-400 w-full p-4">
+        <h1 className="font-bold text-2xl text-white text-center">
           Restaurants
         </h1>
+      </div>
 
+      {/* Centered content */}
+      <div className="mx-auto max-w-7xl px-6 py-10">
         {/* Search Box */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6 mt-4">
           <input
             type="text"
             placeholder="Search restaurants..."
@@ -52,7 +42,7 @@ function RestaurantsSection() {
         <div className="flex flex-wrap -m-4">
           {filteredRestaurants.map((res) => (
             <div key={res.id} className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <div className="border p-4 rounded hover:shadow-lg transition relative">
+              <div className="border p-4 hover:shadow-lg transition relative">
                 <a className="block relative h-48 rounded overflow-hidden">
                   <img
                     alt={res.name}
@@ -72,12 +62,12 @@ function RestaurantsSection() {
 
                 {/* Favorite Button */}
                 <button
-                  className={`absolute top-2 right-2 p-2 rounded-full ${
-                    favorites.includes(res.id)
+                  className={`absolute top-2 right-2 px-2 py-1.4 rounded-full ${
+                    user?.favorites?.some((fav) => fav.id === res.id)
                       ? "bg-yellow-500 text-white"
-                      : "bg-gray-200 text-gray-700"
+                      : "bg-gray-200 text-gray-700 hover:bg-yellow-500 hover:text-white"
                   }`}
-                  onClick={() => toggleFavorite(res.id)}
+                  onClick={() => toggleFavorite(res)}
                   title="Add to Favorites"
                 >
                   ♥
@@ -95,23 +85,8 @@ function RestaurantsSection() {
           ))}
         </div>
       </div>
-
-      {/* Reservation Modal */}
-      {showReservation && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start pt-20 z-50">
-          <div className="bg-white rounded shadow-lg w-11/12 md:w-2/5 p-6 relative">
-            <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-              onClick={closeReservation}
-            >
-              ✕
-            </button>
-            <ReservationSection restaurantName={selectedRestaurant} />
-          </div>
-        </div>
-      )}
     </section>
-  )
+  );
 }
 
-export default RestaurantsSection
+export default RestaurantsSection;

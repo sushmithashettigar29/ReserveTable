@@ -14,7 +14,9 @@ function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find(u => u.email === formData.email && u.password === formData.password);
+    const user = users.find(
+      (u) => u.email === formData.email && u.password === formData.password
+    );
 
     if (user) {
       login(user);
@@ -25,17 +27,75 @@ function SignIn() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-6">Sign In</h1>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} className="w-full p-2 mb-4 border rounded" required />
-        <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full p-2 mb-4 border rounded" required />
-        <button className="w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600">Sign In</button>
-        <p className="mt-4 text-sm text-center">
-          Don't have an account? <Link to="/signup" className="text-yellow-500 font-medium">Sign Up</Link>
-        </p>
-      </form>
+    <div className="flex items-center justify-center mx-auto max-w-7xl px-6 py-24">
+      {/* Left side - Image */}
+      <div className="hidden md:flex w-1/2 items-center justify-center">
+        <img
+          src="login.png"
+          alt="Sign In"
+          className="w-full h-auto max-h-screen object-contain"
+        />
+      </div>
+
+      {/* Right side - Form */}
+      <div className="w-full md:w-1/2 flex items-center justify-center p-8">
+        <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
+          <h1 className="text-3xl font-bold text-center text-gray-800">
+            Sign In
+          </h1>
+          <p className="text-center text-gray-500 text-sm mb-4">
+            Welcome back! Please sign in to continue.
+          </p>
+
+          {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium mb-1">
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium mb-1"
+            >
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+
+          <button className="w-full bg-yellow-500 text-white py-2 rounded font-medium hover:bg-yellow-600 transition">
+            Sign In
+          </button>
+
+          <p className="mt-4 text-sm text-center text-gray-600">
+            Don't have an account?{" "}
+            <Link to="/signup" className="text-yellow-500 font-medium">
+              Sign Up
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

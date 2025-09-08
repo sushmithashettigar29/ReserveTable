@@ -2,7 +2,7 @@ import React from 'react'
 
 function ContactSection() {
   return (
-    <section className="text-gray-600 body-font container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+    <section className="text-gray-600 body-font container mx-auto max-w-7xl px-6 py-24 flex sm:flex-nowrap flex-wrap">
       {/* Map Section */}
       <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
         <iframe

@@ -8,7 +8,7 @@ function ReservationSection({ restaurantName }) {
     contact: "",
     seats: "",
     restaurant: restaurantName || "",
-    time: ""
+    time: "",
   });
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function ReservationSection({ restaurantName }) {
       formData.email,
       formData.contact,
       formData.seats,
-      formData.time
+      formData.time,
     ];
     const csvContent = [headers.join(","), values.join(",")].join("\n");
 
@@ -59,29 +59,32 @@ function ReservationSection({ restaurantName }) {
       contact: "",
       seats: "",
       restaurant: "",
-      time: ""
+      time: "",
     });
   };
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+    <section className="w-full flex flex-col items-center">
+      <div className="w-full max-w-4xl p-8">
+        {/* <div className="text-center mb-8">
+          <h1 className="text-3xl font-semibold text-gray-900 mb-2">
             Reserve Your Table Easily
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+          <p className="text-gray-600 text-base">
             Fill out the form to book a table at your favorite restaurant.
           </p>
-        </div>
+        </div> */}
 
         <form
           onSubmit={handleSubmit}
-          className="lg:w-2/5 w-full mx-auto flex flex-col space-y-4"
+          className="w-full flex flex-col space-y-4"
         >
           {/* Full Name */}
           <div className="relative w-full">
-            <label htmlFor="fullName" className="leading-7 text-sm text-gray-600">
+            <label
+              htmlFor="fullName"
+              className="leading-7 text-sm text-gray-600 font-medium"
+            >
               Full Name
             </label>
             <input
@@ -91,14 +94,17 @@ function ReservationSection({ restaurantName }) {
               placeholder="John Doe"
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-transparent focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               required
             />
           </div>
 
           {/* Email */}
           <div className="relative w-full">
-            <label htmlFor="email" className="leading-7 text-sm text-gray-600">
+            <label
+              htmlFor="email"
+              className="leading-7 text-sm text-gray-600 font-medium"
+            >
               Email
             </label>
             <input
@@ -108,14 +114,17 @@ function ReservationSection({ restaurantName }) {
               placeholder="email@example.com"
               value={formData.email}
               onChange={handleChange}
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-transparent focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               required
             />
           </div>
 
           {/* Contact Number */}
           <div className="relative w-full">
-            <label htmlFor="contact" className="leading-7 text-sm text-gray-600">
+            <label
+              htmlFor="contact"
+              className="leading-7 text-sm text-gray-600 font-medium"
+            >
               Contact Number
             </label>
             <input
@@ -125,7 +134,7 @@ function ReservationSection({ restaurantName }) {
               placeholder="+91 9876543210"
               value={formData.contact}
               onChange={handleChange}
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-transparent focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               required
             />
           </div>
@@ -133,7 +142,10 @@ function ReservationSection({ restaurantName }) {
           {/* Seats + Time */}
           <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
             <div className="relative flex-grow w-full">
-              <label htmlFor="seats" className="leading-7 text-sm text-gray-600">
+              <label
+                htmlFor="seats"
+                className="leading-7 text-sm text-gray-600 font-medium"
+              >
                 Number of Seats
               </label>
               <input
@@ -143,13 +155,16 @@ function ReservationSection({ restaurantName }) {
                 placeholder="2"
                 value={formData.seats}
                 onChange={handleChange}
-                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-transparent focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 required
               />
             </div>
 
             <div className="relative flex-grow w-full">
-              <label htmlFor="time" className="leading-7 text-sm text-gray-600">
+              <label
+                htmlFor="time"
+                className="leading-7 text-sm text-gray-600 font-medium"
+              >
                 Time
               </label>
               <input
@@ -158,7 +173,7 @@ function ReservationSection({ restaurantName }) {
                 name="time"
                 value={formData.time}
                 onChange={handleChange}
-                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-transparent focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 required
               />
             </div>
@@ -166,7 +181,10 @@ function ReservationSection({ restaurantName }) {
 
           {/* Restaurant Select */}
           <div className="relative w-full">
-            <label htmlFor="restaurant" className="leading-7 text-sm text-gray-600">
+            <label
+              htmlFor="restaurant"
+              className="leading-7 text-sm text-gray-600 font-medium"
+            >
               Restaurant
             </label>
             <select
@@ -174,7 +192,7 @@ function ReservationSection({ restaurantName }) {
               name="restaurant"
               value={formData.restaurant}
               onChange={handleChange}
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-transparent focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               required
             >
               <option value="">Select Restaurant</option>
@@ -186,6 +204,7 @@ function ReservationSection({ restaurantName }) {
             </select>
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="text-white bg-yellow-500 border-0 py-2 px-8 hover:bg-yellow-600 rounded text-lg"

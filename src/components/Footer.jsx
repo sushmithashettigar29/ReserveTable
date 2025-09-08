@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-600 body-font">
-      <div className="container mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between">
+      <div className="px-5 py-8 flex flex-col sm:flex-row items-center justify-between">
         <p className="text-sm text-center sm:text-left">
           © 2025 ReserveTable — All Rights Reserved.
         </p>

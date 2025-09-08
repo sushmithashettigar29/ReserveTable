@@ -3,7 +3,7 @@ import React from 'react'
 function GallerySection() {
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto flex flex-wrap">
+      <div className="container mx-auto max-w-7xl px-6 py-24 flex flex-wrap">
         {/* Title & Description */}
         <div className="flex w-full mb-20 flex-wrap">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">

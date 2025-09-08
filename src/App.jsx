@@ -5,6 +5,7 @@ import ListingsPage from "./pages/ListingsPage";
 import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import ReservationPage from "./pages/ReservationPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/signin" element={<SignIn />} />
+              <Route path="/reserve/:restaurantName" element={<ReservationPage />} />
             </Routes>
           </main>
         </div>
