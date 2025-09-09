@@ -116,7 +116,12 @@ Open http://localhost:5173 to view the app.
 
 ---
 
-💡 Usage
+**Testing :** 
+![Testing](/screenshots/testing.png)
+
+--- 
+
+## 💡 Usage
 
 - **Sign Up / Sign In**: Create an account to use favorites and reservation features.
 
