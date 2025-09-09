@@ -53,7 +53,7 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 
 ## 📸 Screenshots
 
-Signin Page :
+**Signin Page**:
 ![Signin Page](/screenshots/signin.png)
 
 SignUp Page :
@@ -88,13 +88,6 @@ Restaurants List Section :
 
 Profile Section : 
 ![Profile Section](/screenshots/profile.png)
-- **Home Page**
-- **Restaurant Listings**
-- **Profile & Favorites**
-- **Reservation Page**
-- **Sign Up / Sign In**  
-
-*(Add actual images/screenshots of your pages here)*
 
 ---
 
