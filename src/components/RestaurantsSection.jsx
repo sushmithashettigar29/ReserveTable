@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import restaurantsData from "../data/restaurants.json";
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import restaurantsData from '../data/restaurants.json';
 
 const RestaurantsSection = React.memo(function RestaurantsSection() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const { user, toggleFavorite } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -53,8 +53,9 @@ const RestaurantsSection = React.memo(function RestaurantsSection() {
                 <img
                   alt={res.name}
                   className="object-cover object-center w-full h-full"
-                  src={res.image} loading="lazy"
-                /> 
+                  src={res.image}
+                  loading="lazy"
+                />
               </a>
 
               {/* Details */}
@@ -65,9 +66,7 @@ const RestaurantsSection = React.memo(function RestaurantsSection() {
                 <h2 className="text-md font-semibold text-gray-900 leading-snug">
                   {res.name} - {res.location}
                 </h2>
-                <p className="mt-1 text-sm red-text font-medium">
-                  {res.price}
-                </p>
+                <p className="mt-1 text-sm red-text font-medium">{res.price}</p>
 
                 {/* Reserve Button */}
                 <button
@@ -82,8 +81,8 @@ const RestaurantsSection = React.memo(function RestaurantsSection() {
               <button
                 className={`cursor-pointer absolute top-3 right-3 px-2.5 py-1.5 rounded-full text-sm shadow-sm ${
                   user?.favorites?.some((fav) => fav.id === res.id)
-                    ? "orange-bg text-white"
-                    : "bg-gray-200 text-gray-700"
+                    ? 'orange-bg text-white'
+                    : 'bg-gray-200 text-gray-700'
                 }`}
                 onClick={() => toggleFavorite(res)}
               >

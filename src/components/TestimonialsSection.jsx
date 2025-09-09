@@ -4,25 +4,25 @@ function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      name: "Alice Johnson",
-      role: "Food Blogger",
-      image: "p1.jpg",
-      text: "Absolutely loved the ambiance and the food at this restaurant! The pasta was perfectly cooked and the desserts were heavenly. Highly recommend!"
+      name: 'Alice Johnson',
+      role: 'Food Blogger',
+      image: 'p1.jpg',
+      text: 'Absolutely loved the ambiance and the food at this restaurant! The pasta was perfectly cooked and the desserts were heavenly. Highly recommend!',
     },
     {
       id: 2,
-      name: "Michael Smith",
-      role: "Regular Customer",
-      image: "p3.jpg",
-      text: "A wonderful dining experience every time. The staff is friendly, and the dishes are always fresh and delicious. Great place for family dinners!"
+      name: 'Michael Smith',
+      role: 'Regular Customer',
+      image: 'p3.jpg',
+      text: 'A wonderful dining experience every time. The staff is friendly, and the dishes are always fresh and delicious. Great place for family dinners!',
     },
     {
       id: 3,
-      name: "Sophia Lee",
-      role: "Food Critic",
-      image: "p2.jpg",
-      text: "The flavors are exceptional, and the restaurant pays attention to every detail. From the appetizers to the desserts, everything is top-notch. Truly a hidden gem!"
-    }
+      name: 'Sophia Lee',
+      role: 'Food Critic',
+      image: 'p2.jpg',
+      text: 'The flavors are exceptional, and the restaurant pays attention to every detail. From the appetizers to the desserts, everything is top-notch. Truly a hidden gem!',
+    },
   ];
 
   return (
@@ -44,7 +44,8 @@ function TestimonialsSection() {
               <img
                 alt={t.name}
                 className="w-16 h-16 mb-4 object-cover object-center rounded-full mx-auto border-2 border-orange-200 shadow-sm"
-                src={t.image} loading="lazy"
+                src={t.image}
+                loading="lazy"
               />
 
               {/* Review Text */}

@@ -1,14 +1,17 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import ReservationSection from "../components/ReservationSection";
-import restaurantsData from "../data/restaurants.json";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import ReservationSection from '../components/ReservationSection';
+import restaurantsData from '../data/restaurants.json';
 
 function ReservationPage() {
   const { restaurantName } = useParams();
   const [weather, setWeather] = useState(null);
-  const [selectedRestaurant, setSelectedRestaurant] = useState(restaurantName || "");
+  const [selectedRestaurant, setSelectedRestaurant] = useState(
+    restaurantName || ''
+  );
 
-  const location = restaurantsData.find(r => r.name === selectedRestaurant)?.location || "";
+  const location =
+    restaurantsData.find((r) => r.name === selectedRestaurant)?.location || '';
 
   useEffect(() => {
     if (!location) return;
@@ -29,7 +32,7 @@ function ReservationPage() {
           setWeather(null);
         }
       } catch (err) {
-        console.error("Weather fetch error:", err);
+        console.error('Weather fetch error:', err);
         setWeather(null);
       }
     };
@@ -45,7 +48,8 @@ function ReservationPage() {
           Reservation <span className="red-text">Booking</span>
         </h1>
         <p className="mt-4 text-base text-gray-600 max-w-2xl mx-auto">
-          Book your table in just a few clicks and enjoy a seamless dining experience.
+          Book your table in just a few clicks and enjoy a seamless dining
+          experience.
         </p>
 
         {/* Weather Info */}
@@ -65,7 +69,8 @@ function ReservationPage() {
           <img
             src="/login.png"
             alt="Reserve Table"
-            className="w-full h-auto object-contain" loading="lazy"
+            className="w-full h-auto object-contain"
+            loading="lazy"
           />
         </div>
 

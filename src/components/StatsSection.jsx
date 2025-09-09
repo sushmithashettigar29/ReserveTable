@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function StatsSection() {
   return (
@@ -10,21 +10,19 @@ function StatsSection() {
             Why Choose <span className="orange-text">ReserveTable</span>?
           </h1>
           <p className="lg:w-2/3 mx-auto text-lg text-gray-700 leading-relaxed">
-
-              We're helping thousands of users book their favorite restaurants effortlessly.
-
-              Here are some quick stats that highlight our growth and trust.
-
+            We're helping thousands of users book their favorite restaurants
+            effortlessly. Here are some quick stats that highlight our growth
+            and trust.
           </p>
         </div>
 
         {/* Stats Grid */}
         <div className="flex flex-wrap justify-center gap-12 text-center">
           {[
-            { number: "2.7K", label: "Reservations" },
-            { number: "1.3K", label: "Users" },
-            { number: "74", label: "Restaurants" },
-            { number: "46", label: "Cities" },
+            { number: '2.7K', label: 'Reservations' },
+            { number: '1.3K', label: 'Users' },
+            { number: '74', label: 'Restaurants' },
+            { number: '46', label: 'Cities' },
           ].map((stat, idx) => (
             <div
               key={idx}
@@ -41,7 +39,7 @@ function StatsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default StatsSection
+export default StatsSection;

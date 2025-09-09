@@ -1,80 +1,73 @@
-import React, { useState, useEffect } from "react";
-import restaurantsData from "../data/restaurants.json";
+import React, { useState, useEffect } from 'react';
+import restaurantsData from '../data/restaurants.json';
 
-const ReservationSection = React.memo(function ReservationSection({ restaurantName }) {
+const ReservationSection = React.memo(function ReservationSection({
+  restaurantName,
+}) {
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    contact: "",
-    seats: "",
-    restaurant: restaurantName || "",
-    time: "",
+    fullName: '',
+    email: '',
+    contact: '',
+    seats: '',
+    restaurant: restaurantName || '',
+    time: '',
   });
 
+  const [errors, setErrors] = useState({});
+
   useEffect(() => {
-    setFormData((prev) => ({ ...prev, restaurant: restaurantName || "" }));
+    setFormData((prev) => ({ ...prev, restaurant: restaurantName || '' }));
   }, [restaurantName]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: '' }); // clear error while typing
+  };
+
+  const validate = () => {
+    let newErrors = {};
+    if (!formData.fullName.trim()) newErrors.fullName = 'Full Name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Enter a valid email';
+    }
+    if (!formData.contact.trim())
+      newErrors.contact = 'Contact number is required';
+    if (!formData.seats) newErrors.seats = 'Seats are required';
+    if (!formData.time) newErrors.time = 'Time is required';
+    if (!formData.restaurant)
+      newErrors.restaurant = 'Please select a restaurant';
+
+    return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.restaurant) {
-      alert("Please select a restaurant!");
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
-    // Prepare CSV content
-    const headers = ["Full Name", "Email", "Contact", "Seats", "Time"];
-    const values = [
-      formData.fullName,
-      formData.email,
-      formData.contact,
-      formData.seats,
-      formData.time,
-    ];
-    const csvContent = [headers.join(","), values.join(",")].join("\n");
-
-    // Create blob and download
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-
-    // Replace spaces with _ for file name
-    const fileName = `${formData.restaurant.replace(/\s+/g, "_")}_bookings.csv`;
-    link.setAttribute("download", fileName);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    alert("Booking submitted! CSV downloaded for restaurant.");
+    alert(`Booking submitted for ${formData.restaurant}!`);
 
     // Reset form
     setFormData({
-      fullName: "",
-      email: "",
-      contact: "",
-      seats: "",
-      restaurant: "",
-      time: "",
+      fullName: '',
+      email: '',
+      contact: '',
+      seats: '',
+      restaurant: '',
+      time: '',
     });
+    setErrors({});
   };
 
   return (
-    <section id="reservation"  className="w-full flex flex-col items-center">
+    <section id="reservation" className="w-full flex flex-col items-center">
       <div className="w-full max-w-4xl p-8">
-        {/* <div className="text-center mb-8">
-          <h1 className="text-3xl font-semibold text-gray-900 mb-2">
-            Reserve Your Table Easily
-          </h1>
-          <p className="text-gray-600 text-base">
-            Fill out the form to book a table at your favorite restaurant.
-          </p>
-        </div> */}
-
         <form
           onSubmit={handleSubmit}
           className="w-full flex flex-col space-y-4"
@@ -95,8 +88,10 @@ const ReservationSection = React.memo(function ReservationSection({ restaurantNa
               value={formData.fullName}
               onChange={handleChange}
               className="w-full bg-white border text-base outline-none py-2 px-3"
-              required
             />
+            {errors.fullName && (
+              <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+            )}
           </div>
 
           {/* Email */}
@@ -115,8 +110,10 @@ const ReservationSection = React.memo(function ReservationSection({ restaurantNa
               value={formData.email}
               onChange={handleChange}
               className="w-full bg-white border text-base outline-none py-2 px-3"
-              required
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
           </div>
 
           {/* Contact Number */}
@@ -135,8 +132,10 @@ const ReservationSection = React.memo(function ReservationSection({ restaurantNa
               value={formData.contact}
               onChange={handleChange}
               className="w-full bg-white border text-base outline-none py-2 px-3"
-              required
             />
+            {errors.contact && (
+              <p className="text-red-500 text-sm mt-1">{errors.contact}</p>
+            )}
           </div>
 
           {/* Seats + Time */}
@@ -156,8 +155,10 @@ const ReservationSection = React.memo(function ReservationSection({ restaurantNa
                 value={formData.seats}
                 onChange={handleChange}
                 className="w-full bg-white border text-base outline-none py-2 px-3"
-                required
               />
+              {errors.seats && (
+                <p className="text-red-500 text-sm mt-1">{errors.seats}</p>
+              )}
             </div>
 
             <div className="relative flex-grow w-full">
@@ -174,8 +175,10 @@ const ReservationSection = React.memo(function ReservationSection({ restaurantNa
                 value={formData.time}
                 onChange={handleChange}
                 className="w-full bg-white border text-base outline-none py-2 px-3"
-                required
               />
+              {errors.time && (
+                <p className="text-red-500 text-sm mt-1">{errors.time}</p>
+              )}
             </div>
           </div>
 
@@ -193,7 +196,6 @@ const ReservationSection = React.memo(function ReservationSection({ restaurantNa
               value={formData.restaurant}
               onChange={handleChange}
               className="w-full bg-white border text-base outline-none py-2 px-3"
-              required
             >
               <option value="">Select Restaurant</option>
               {restaurantsData.map((res) => (
@@ -202,12 +204,15 @@ const ReservationSection = React.memo(function ReservationSection({ restaurantNa
                 </option>
               ))}
             </select>
+            {errors.restaurant && (
+              <p className="text-red-500 text-sm mt-1">{errors.restaurant}</p>
+            )}
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="text-white red-bg border-0 py-2 px-8  text-lg font-bold cursor-pointer"
+            className="text-white red-bg border-0 py-2 px-8 text-lg font-bold cursor-pointer"
           >
             Reserve Now
           </button>

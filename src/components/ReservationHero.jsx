@@ -1,4 +1,4 @@
-import ReservationSection from "./ReservationSection";
+import ReservationSection from './ReservationSection';
 
 function ReservationHero({ restaurantName }) {
   return (
@@ -9,8 +9,11 @@ function ReservationHero({ restaurantName }) {
           Reserve Your <span className="orange-text">Table</span> Easily
         </h1>
         <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
-          <span className="font-medium">Fill out the form</span> to book a table at your favorite restaurant and enjoy a{" "}
-          <span className="italic text-gray-500">seamless dining experience.</span>
+          <span className="font-medium">Fill out the form</span> to book a table
+          at your favorite restaurant and enjoy a{' '}
+          <span className="italic text-gray-500">
+            seamless dining experience.
+          </span>
         </p>
       </div>
 
@@ -21,7 +24,8 @@ function ReservationHero({ restaurantName }) {
           <img
             className="object-cover object-center shadow-md max-h-[480px] w-full hover:shadow-xl transition duration-300"
             alt="reservation"
-            src="/f1.jpg" loading="lazy"
+            src="/f1.jpg"
+            loading="lazy"
           />
         </div>
 

@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 function Profile() {
   const { user, toggleFavorite } = useContext(AuthContext);
@@ -53,7 +53,8 @@ function Profile() {
                   <img
                     src={fav.image}
                     alt={fav.name}
-                    className="object-cover object-center w-full h-full" loading="lazy"
+                    className="object-cover object-center w-full h-full"
+                    loading="lazy"
                   />
                 </a>
 
@@ -63,7 +64,7 @@ function Profile() {
                     {fav.category}
                   </h3>
                   <h2 className="text-md font-semibold text-gray-900 leading-snug">
-                    {fav.name} {fav.location ? `- ${fav.location}` : ""}
+                    {fav.name} {fav.location ? `- ${fav.location}` : ''}
                   </h2>
 
                   <p className="mt-1 text-sm red-text font-medium">
@@ -83,8 +84,8 @@ function Profile() {
                 <button
                   className={`cursor-pointer absolute top-3 right-3 px-2.5 py-1.5 rounded-full text-sm shadow-sm ${
                     user?.favorites?.some((f) => f.id === fav.id)
-                      ? "orange-bg text-white"
-                      : "bg-gray-200 text-gray-700"
+                      ? 'orange-bg text-white'
+                      : 'bg-gray-200 text-gray-700'
                   }`}
                   onClick={() => toggleFavorite(fav)}
                 >

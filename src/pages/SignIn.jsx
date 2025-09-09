@@ -1,10 +1,10 @@
-import { useState, useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { useState, useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 function SignIn() {
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
@@ -13,16 +13,16 @@ function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(
       (u) => u.email === formData.email && u.password === formData.password
     );
 
     if (user) {
       login(user);
-      navigate("/profile");
+      navigate('/profile');
     } else {
-      setError("Invalid email or password!");
+      setError('Invalid email or password!');
     }
   };
 
@@ -33,16 +33,15 @@ function SignIn() {
         <img
           src="login.png"
           alt="Sign In"
-          className="w-full h-auto max-h-screen object-contain" loading="lazy"
+          className="w-full h-auto max-h-screen object-contain"
+          loading="lazy"
         />
       </div>
 
       {/* Right side - Form */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-8">
         <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
-          <h1 className="text-3xl font-bold text-center red-text">
-            Sign In
-          </h1>
+          <h1 className="text-3xl font-bold text-center red-text">Sign In</h1>
           <p className="text-center text-gray-500 text-sm mb-4">
             Welcome back! Please sign in to continue.
           </p>
@@ -89,7 +88,7 @@ function SignIn() {
           </button>
 
           <p className="mt-4 text-sm text-center text-gray-600">
-            Don't have an account?{" "}
+            Don't have an account?{' '}
             <Link to="/signup" className="red-text font-medium">
               Sign Up
             </Link>

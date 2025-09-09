@@ -1,12 +1,12 @@
-import React from 'react'
-import RestaurantsSection from '../components/RestaurantsSection'
+import React from 'react';
+import RestaurantsSection from '../components/RestaurantsSection';
 
 function ListingsPage() {
   return (
-   <div>
-      <RestaurantsSection/>
+    <div>
+      <RestaurantsSection />
     </div>
-  )
+  );
 }
 
-export default ListingsPage
+export default ListingsPage;

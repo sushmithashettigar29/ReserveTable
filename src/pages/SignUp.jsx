@@ -1,10 +1,14 @@
-import { useState, useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { useState, useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 function SignUp() {
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
-  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
@@ -13,18 +17,18 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = JSON.parse(localStorage.getItem('users')) || [];
     const existingUser = users.find((u) => u.email === formData.email);
 
     if (existingUser) {
-      setError("Email already registered!");
+      setError('Email already registered!');
       return;
     }
 
     users.push(formData);
-    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem('users', JSON.stringify(users));
     login(formData);
-    navigate("/profile");
+    navigate('/profile');
   };
 
   return (
@@ -34,8 +38,9 @@ function SignUp() {
         <img
           src="login.png"
           alt="Sign Up"
-          className="w-full h-auto max-h-screen object-contain" loading="lazy"
-        /> 
+          className="w-full h-auto max-h-screen object-contain"
+          loading="lazy"
+        />
       </div>
 
       {/* Right side - Form */}
@@ -83,7 +88,10 @@ function SignUp() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium mb-1">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium mb-1"
+            >
               Password
             </label>
             <input
@@ -103,7 +111,7 @@ function SignUp() {
           </button>
 
           <p className="mt-4 text-sm text-center text-gray-600">
-            Already have an account?{" "}
+            Already have an account?{' '}
             <Link to="/signin" className="orange-text font-medium">
               Sign In
             </Link>

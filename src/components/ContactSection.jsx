@@ -16,7 +16,7 @@ const ContactSection = React.memo(function ContactSection() {
             marginWidth="0"
             scrolling="no"
             src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=Your%20Restaurant%20Name&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-            style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
+            style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}
           ></iframe>
           <div className=" relative flex flex-wrap py-6 px-8 z-10">
             <div className="lg:w-1/2 px-4">
@@ -51,7 +51,8 @@ const ContactSection = React.memo(function ContactSection() {
             <span className="orange-text">Get in Touch</span>
           </h1>
           <p className="leading-relaxed mb-8 text-gray-600 text-base">
-            We'd love to hear from you! Share your feedback, suggestions, or questions with us.
+            We'd love to hear from you! Share your feedback, suggestions, or
+            questions with us.
           </p>
 
           {/* Name */}

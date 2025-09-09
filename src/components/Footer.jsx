@@ -1,5 +1,5 @@
-import React from "react";
-import { ChefHat, Clock, MapPin } from "lucide-react"; // Make sure you have lucide-react installed
+import React from 'react';
+import { ChefHat, Clock, MapPin } from 'lucide-react'; // Make sure you have lucide-react installed
 
 function Footer() {
   return (
@@ -10,7 +10,9 @@ function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <ChefHat className="h-6 w-6 text-gray-800 orange-text" />
-              <span className="text-xl font-extrabold red-text">ReserveTable</span>
+              <span className="text-xl font-extrabold red-text">
+                ReserveTable
+              </span>
             </div>
             <p className="text-gray-500">
               Simplifying your dining experience with easy online reservations.
@@ -22,16 +24,24 @@ function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-500">
               <li>
-                <a href="#" className="hover:text-gray-800 transition-colors">Reservations</a>
+                <a href="#" className="hover:text-gray-800 transition-colors">
+                  Reservations
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-800 transition-colors">Menu</a>
+                <a href="#" className="hover:text-gray-800 transition-colors">
+                  Menu
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-800 transition-colors">Events</a>
+                <a href="#" className="hover:text-gray-800 transition-colors">
+                  Events
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-800 transition-colors">Contact</a>
+                <a href="#" className="hover:text-gray-800 transition-colors">
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
@@ -73,9 +83,15 @@ function Footer() {
         <div className="border-t border-gray-300 mt-8 pt-8 text-center text-gray-500">
           <p>© 2025 ReserveTable — All Rights Reserved.</p>
           <div className="flex mt-2 justify-center space-x-4">
-            <a href="#" className="text-gray-500 hover:text-gray-700">Facebook</a>
-            <a href="#" className="text-gray-500 hover:text-gray-700">Twitter</a>
-            <a href="#" className="text-gray-500 hover:text-gray-700">Instagram</a>
+            <a href="#" className="text-gray-500 hover:text-gray-700">
+              Facebook
+            </a>
+            <a href="#" className="text-gray-500 hover:text-gray-700">
+              Twitter
+            </a>
+            <a href="#" className="text-gray-500 hover:text-gray-700">
+              Instagram
+            </a>
           </div>
         </div>
       </div>
