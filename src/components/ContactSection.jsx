@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactSection = React.memo(function ContactSection() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: '' }); // clear error while typing
+  };
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) newErrors.name = 'Name is required.';
+    if (!formData.email.trim()) newErrors.email = 'Email is required.';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid.';
+    if (!formData.message.trim()) newErrors.message = 'Message is required.';
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0; // true if no errors
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      alert('Message Sent!');
+      setFormData({ name: '', email: '', message: '' }); // clear form
+    }
+  };
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto max-w-7xl px-6 py-24 flex sm:flex-nowrap flex-wrap gap-12">
-        {/* Map Section */}
+        {/* Map Section (unchanged) */}
         <div className="lg:w-2/3 md:w-1/2 bg-gray-300 overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
           <iframe
             width="100%"
@@ -55,64 +84,68 @@ const ContactSection = React.memo(function ContactSection() {
             questions with us.
           </p>
 
-          {/* Name */}
-          <div className="relative mb-5">
-            <label
-              htmlFor="name"
-              className="leading-7 text-sm font-semibold text-gray-700"
+          <form onSubmit={handleSubmit} className="w-full">
+            {/* Name */}
+            <div className="relative mb-5">
+              <label htmlFor="name" className="leading-7 text-sm font-semibold text-gray-700">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full bg-white border text-base outline-none py-2 px-3"
+              />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+            </div>
+
+            {/* Email */}
+            <div className="relative mb-5">
+              <label htmlFor="email" className="leading-7 text-sm font-semibold text-gray-700">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full bg-white border text-base outline-none py-2 px-3"
+              />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            </div>
+
+            {/* Message */}
+            <div className="relative mb-6">
+              <label htmlFor="message" className="leading-7 text-sm font-semibold text-gray-700">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message..."
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full bg-white border text-base outline-none py-2 px-3"
+              ></textarea>
+              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+            </div>
+
+            <button
+              type="submit"
+              className="text-white orange-bg border-0 py-3 px-6 cursor-pointer text-lg font-bold transition duration-200 w-full"
             >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="John Doe "
-              className="w-full bg-white border text-base outline-none py-2 px-3"
-            />
-          </div>
+              Send Message
+            </button>
 
-          {/* Email */}
-          <div className="relative mb-5">
-            <label
-              htmlFor="email"
-              className="leading-7 text-sm font-semibold text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="email@example.com"
-              className="w-full bg-white border text-base outline-none py-2 px-3"
-            />
-          </div>
-
-          {/* Message */}
-          <div className="relative mb-6">
-            <label
-              htmlFor="message"
-              className="leading-7 text-sm font-semibold text-gray-700"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Write your message..."
-              className="w-full bg-white border text-base outline-none py-2 px-3"
-            ></textarea>
-          </div>
-
-          {/* Button */}
-          <button className="text-white orange-bg border-0 py-3 px-6 cursor-pointer text-lg font-bold transition duration-200">
-            Send Message
-          </button>
-
-          <p className="text-xs text-gray-500 mt-4">
-            We'll get back to you within 24 hours.
-          </p>
+            <p className="text-xs text-gray-500 mt-4">
+              We'll get back to you within 24 hours.
+            </p>
+          </form>
         </div>
       </div>
     </section>
