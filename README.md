@@ -5,8 +5,7 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 ---
 
 ## 🚀 Live Demo
-[Live Demo on Vercel](https://<your-vercel-url>)  
-*(Replace with actual link after deployment)*
+[Live Demo on Vercel](https://reserve-table-sooty.vercel.app/)  
 
 ---
 
@@ -54,11 +53,9 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 
 ## 📸 Screenshots
 
-- Spam message vocabulary (black background):
-  ![Spam WordCloud](/WordCloud-Images/Spam-msg.png)
+Hero Section:
+![Hero Section](/screenshots/hero-section.png)
 
-- Ham message vocabulary (white background):
-  ![Ham WordCloud](/WordCloud-Images/Ham-msg.png)
 - **Home Page**
 - **Restaurant Listings**
 - **Profile & Favorites**
