@@ -2,8 +2,6 @@
 
 A **responsive, multi-featured single-page application** for browsing restaurants, managing favorites, and booking tables. Built with **React** and **Tailwind CSS**, using **localStorage** for authentication and state persistence, and integrating **OpenWeather API** for live weather info.
 
----
-
 ## 🚀 Live Demo
 [Live Demo on Vercel](https://reserve-table-sooty.vercel.app/)  
 
@@ -16,7 +14,7 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 - Protected features: Favorites and Reservations are only available for logged-in users.
 
 ### Restaurant Listings
-- Browse restaurants with images, category, price, and location.
+- Browse restaurants with names.
 
 ### Favorites
 - Add or remove restaurants from favorites.
@@ -25,6 +23,7 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 ### Table Reservation
 - Reserve a table for a specific restaurant.
 - Displays live weather information at the restaurant location.
+- Alerts the user when the booking is successfully done.
 
 ### Contact / Feedback Form
 - Name, email, and message fields with validation.
@@ -53,40 +52,40 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 
 ## 📸 Screenshots
 
-**Signin Page**:
-![Signin Page](/screenshots/signin.png)
+**SignIn Page :**
+![SignIn Page](/screenshots/signin.png)
 
-SignUp Page :
+**SignUp Page :**
 ![SignUp Page](/screenshots/signup.png)
 
-Hero Section :
+**Hero Section :**
 ![Hero Section](/screenshots/hero-section.png)
 
-Statistics Section : 
+**Statistics Section :** 
 ![Statistics Section](/screenshots/statistics.png)
 
-Gallery Section : 
+**Gallery Section :** 
 ![Gallery Section](/screenshots/gallery.png)
 
-Table Reservation Section : 
+**Table Reservation Section :** 
 ![Table Reservation Section](/screenshots/reserve-table-home.png)
 
-Table Reservation with Weather Prediction :
+**Table Reservation with Weather Prediction :**
 ![Weather](/screenshots/weather.png)
 
-Testimonials Section : 
+**Testimonials Section :** 
 ![Testimonials Section](/screenshots/testimonials.png)
 
-Contact Section : 
+**Contact Section :** 
 ![Contact Section](/screenshots/contact.png)
 
-Footer Section : 
+**Footer Section :** 
 ![Footer Section](/screenshots/footer.png)
 
-Restaurants List Section : 
+**Restaurants List Section :** 
 ![Restaurants List Section](/screenshots/restaurants-list.png)
 
-Profile Section : 
+**Profile Section :** 
 ![Profile Section](/screenshots/profile.png)
 
 ---
@@ -125,4 +124,4 @@ Open http://localhost:5173 to view the app.
 
 - **Reservation**: Click “Reserve Table” on a restaurant to navigate to the Reservation page with live weather info.
 
-- **Feedbac**k: Fill out the form; inline validation will show errors. On success, an alert confirms the message is sent.
+- **Contact / Feedback**: Fill out the form; inline validation will show errors. On success, an alert confirms the message is sent.
