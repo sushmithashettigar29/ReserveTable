@@ -53,9 +53,41 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 
 ## 📸 Screenshots
 
-Hero Section:
+Signin Page :
+![Signin Page](/screenshots/signin.png)
+
+SignUp Page :
+![SignUp Page](/screenshots/signup.png)
+
+Hero Section :
 ![Hero Section](/screenshots/hero-section.png)
 
+Statistics Section : 
+![Statistics Section](/screenshots/statistics.png)
+
+Gallery Section : 
+![Gallery Section](/screenshots/gallery.png)
+
+Table Reservation Section : 
+![Table Reservation Section](/screenshots/reserve-table-home.png)
+
+Table Reservation with Weather Prediction :
+![Weather](/screenshots/weather.png)
+
+Testimonials Section : 
+![Testimonials Section](/screenshots/testimonials.png)
+
+Contact Section : 
+![Contact Section](/screenshots/contact.png)
+
+Footer Section : 
+![Footer Section](/screenshots/footer.png)
+
+Restaurants List Section : 
+![Restaurants List Section](/screenshots/restaurants-list.png)
+
+Profile Section : 
+![Profile Section](/screenshots/profile.png)
 - **Home Page**
 - **Restaurant Listings**
 - **Profile & Favorites**
