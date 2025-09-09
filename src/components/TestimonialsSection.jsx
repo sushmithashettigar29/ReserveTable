@@ -44,7 +44,7 @@ function TestimonialsSection() {
               <img
                 alt={t.name}
                 className="w-16 h-16 mb-4 object-cover object-center rounded-full mx-auto border-2 border-orange-200 shadow-sm"
-                src={t.image}
+                src={t.image} loading="lazy"
               />
 
               {/* Review Text */}

@@ -53,8 +53,8 @@ function RestaurantsSection() {
                 <img
                   alt={res.name}
                   className="object-cover object-center w-full h-full"
-                  src={res.image}
-                />
+                  src={res.image} loading="lazy"
+                /> 
               </a>
 
               {/* Details */}

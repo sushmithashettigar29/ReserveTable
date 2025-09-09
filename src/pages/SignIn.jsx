@@ -33,7 +33,7 @@ function SignIn() {
         <img
           src="login.png"
           alt="Sign In"
-          className="w-full h-auto max-h-screen object-contain"
+          className="w-full h-auto max-h-screen object-contain" loading="lazy"
         />
       </div>
 

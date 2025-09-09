@@ -65,7 +65,7 @@ function ReservationPage() {
           <img
             src="/login.png"
             alt="Reserve Table"
-            className="w-full h-auto object-contain"
+            className="w-full h-auto object-contain" loading="lazy"
           />
         </div>
 

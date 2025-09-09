@@ -53,7 +53,7 @@ function Profile() {
                   <img
                     src={fav.image}
                     alt={fav.name}
-                    className="object-cover object-center w-full h-full"
+                    className="object-cover object-center w-full h-full" loading="lazy"
                   />
                 </a>
 

@@ -51,7 +51,7 @@ function ContactSection() {
             <span className="orange-text">Get in Touch</span>
           </h1>
           <p className="leading-relaxed mb-8 text-gray-600 text-base">
-            We’d love to hear from you! Share your feedback, suggestions, or questions with us.
+            We'd love to hear from you! Share your feedback, suggestions, or questions with us.
           </p>
 
           {/* Name */}

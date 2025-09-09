@@ -21,7 +21,7 @@ function ReservationHero({ restaurantName }) {
           <img
             className="object-cover object-center shadow-md max-h-[480px] w-full hover:shadow-xl transition duration-300"
             alt="reservation"
-            src="/f1.jpg"
+            src="/f1.jpg" loading="lazy"
           />
         </div>
 

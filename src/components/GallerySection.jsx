@@ -27,21 +27,21 @@ function GallerySection() {
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block  shadow-md"
-                src="f1.jpg"
+                src="f1.jpg" loading="lazy"
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block  shadow-md"
-                src="f2.jpg"
+                src="f2.jpg" loading="lazy"
               />
             </div>
             <div className="md:p-2 p-1 w-full">
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block  shadow-md"
-                src="f3.jpg"
+                src="f3.jpg" loading="lazy"
               />
             </div>
           </div>
@@ -51,21 +51,21 @@ function GallerySection() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block shadow-md"
-                src="f4.jpg"
+                src="f4.jpg" loading="lazy"
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block shadow-md"
-                src="f5.jpg"
+                src="f5.jpg" loading="lazy"
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block shadow-md"
-                src="f6.jpg"
+                src="f6.jpg" loading="lazy"
               />
             </div>
           </div>

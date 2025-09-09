@@ -34,8 +34,8 @@ function SignUp() {
         <img
           src="login.png"
           alt="Sign Up"
-          className="w-full h-auto max-h-screen object-contain"
-        />
+          className="w-full h-auto max-h-screen object-contain" loading="lazy"
+        /> 
       </div>
 
       {/* Right side - Form */}

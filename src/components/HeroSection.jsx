@@ -48,7 +48,7 @@ function HeroSection() {
             className="object-cover object-center rounded"
             alt="hero"
             src="hero.png"
-            width={700}
+            width={700} loading="lazy"
           />
         </div>
       </div>
