@@ -1,18 +1,22 @@
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HomePage from "./pages/HomePage";
-import ListingsPage from "./pages/ListingsPage";
-import Profile from "./pages/Profile";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
-import ReservationPage from "./pages/ReservationPage";
+
+// Lazy-loaded pages
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ListingsPage = lazy(() => import("./pages/ListingsPage"));
+const Profile = lazy(() => import("./pages/Profile"));
+const SignUp = lazy(() => import("./pages/SignUp"));
+const SignIn = lazy(() => import("./pages/SignIn"));
+const ReservationPage = lazy(() => import("./pages/ReservationPage"));
 
 function App() {
   return (
-      <BrowserRouter>
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-grow">
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow">
+          <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/restaurants" element={<ListingsPage />} />
@@ -21,9 +25,10 @@ function App() {
               <Route path="/signin" element={<SignIn />} />
               <Route path="/reserve/:restaurantName" element={<ReservationPage />} />
             </Routes>
-          </main>
-        </div>
-      </BrowserRouter>
+          </Suspense>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
