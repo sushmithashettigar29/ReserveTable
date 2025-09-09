@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import restaurantsData from "../data/restaurants.json";
 
-function ReservationSection({ restaurantName }) {
+const ReservationSection = React.memo(function ReservationSection({ restaurantName }) {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -215,6 +215,6 @@ function ReservationSection({ restaurantName }) {
       </div>
     </section>
   );
-}
+});
 
 export default ReservationSection;

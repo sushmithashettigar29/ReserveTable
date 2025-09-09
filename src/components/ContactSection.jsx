@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ContactSection() {
+const ContactSection = React.memo(function ContactSection() {
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto max-w-7xl px-6 py-24 flex sm:flex-nowrap flex-wrap gap-12">
@@ -116,6 +116,6 @@ function ContactSection() {
       </div>
     </section>
   );
-}
+});
 
 export default ContactSection;

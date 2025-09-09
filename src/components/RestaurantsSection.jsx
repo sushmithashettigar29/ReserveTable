@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import restaurantsData from "../data/restaurants.json";
 
-function RestaurantsSection() {
+const RestaurantsSection = React.memo(function RestaurantsSection() {
   const [search, setSearch] = useState("");
   const { user, toggleFavorite } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -95,6 +95,6 @@ function RestaurantsSection() {
       </div>
     </section>
   );
-}
+});
 
 export default RestaurantsSection;
