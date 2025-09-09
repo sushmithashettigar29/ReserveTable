@@ -54,6 +54,11 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 
 ## 📸 Screenshots
 
+- Spam message vocabulary (black background):
+  ![Spam WordCloud](/WordCloud-Images/Spam-msg.png)
+
+- Ham message vocabulary (white background):
+  ![Ham WordCloud](/WordCloud-Images/Ham-msg.png)
 - **Home Page**
 - **Restaurant Listings**
 - **Profile & Favorites**
@@ -67,35 +72,35 @@ A **responsive, multi-featured single-page application** for browsing restaurant
 ## 🚀 Installation
 
 Clone the repository:
-
 ```bash
 git clone https://github.com/your-username/restaurant-reservation-app.git
 cd restaurant-reservation-app
 ```
 
-```bash
 Install dependencies:
+```bash
 npm install
 ```
 
-```bash
 Add your OpenWeather API key in .env:
+```bash
 VITE_WEATHER_API_KEY=your_api_key_here
 ```
 
+Run the app:
 ```bash
-Run the app
 npm run dev
 ```
-
 Open http://localhost:5173 to view the app.
+
+---
 
 💡 Usage
 
-Sign Up / Sign In: Create an account to use favorites and reservation features.
+- **Sign Up / Sign In**: Create an account to use favorites and reservation features.
 
-Favorites: Click ♥ icon to add/remove favorites.
+- **Favorites**: Click ♥ icon to add/remove favorites.
 
-Reservation: Click “Reserve Table” on a restaurant to navigate to the Reservation page with live weather info.
+- **Reservation**: Click “Reserve Table” on a restaurant to navigate to the Reservation page with live weather info.
 
-Feedback: Fill out the form; inline validation will show errors. On success, an alert confirms the message is sent.
+- **Feedbac**k: Fill out the form; inline validation will show errors. On success, an alert confirms the message is sent.
