@@ -28,7 +28,7 @@ function StatsSection() {
           ].map((stat, idx) => (
             <div
               key={idx}
-              className="border-2 border-orange-200 rounded-tl-xl rounded-br-xl shadow-md w-40 h-32 flex flex-col items-center justify-center bg-white hover:shadow-lg transition duration-300"
+              className="shadow-sm w-40 h-32 flex flex-col items-center justify-center bg-white hover:shadow-lg transition duration-300"
             >
               <h2 className="title-font font-bold text-4xl red-text">
                 {stat.number}

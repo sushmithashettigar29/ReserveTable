@@ -94,7 +94,7 @@ function ReservationSection({ restaurantName }) {
               placeholder="John Doe"
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white border text-base outline-none py-2 px-3"
               required
             />
           </div>
@@ -114,7 +114,7 @@ function ReservationSection({ restaurantName }) {
               placeholder="email@example.com"
               value={formData.email}
               onChange={handleChange}
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white border text-base outline-none py-2 px-3"
               required
             />
           </div>
@@ -134,7 +134,7 @@ function ReservationSection({ restaurantName }) {
               placeholder="+91 9876543210"
               value={formData.contact}
               onChange={handleChange}
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white border text-base outline-none py-2 px-3"
               required
             />
           </div>
@@ -155,7 +155,7 @@ function ReservationSection({ restaurantName }) {
                 placeholder="2"
                 value={formData.seats}
                 onChange={handleChange}
-                className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white border text-base outline-none py-2 px-3"
                 required
               />
             </div>
@@ -173,7 +173,7 @@ function ReservationSection({ restaurantName }) {
                 name="time"
                 value={formData.time}
                 onChange={handleChange}
-                className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white border text-base outline-none py-2 px-3"
                 required
               />
             </div>
@@ -192,7 +192,7 @@ function ReservationSection({ restaurantName }) {
               name="restaurant"
               value={formData.restaurant}
               onChange={handleChange}
-              className="w-full bg-gray-100 rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white border text-base outline-none py-2 px-3"
               required
             >
               <option value="">Select Restaurant</option>
@@ -207,7 +207,7 @@ function ReservationSection({ restaurantName }) {
           {/* Submit Button */}
           <button
             type="submit"
-            className="text-white red-bg border-0 py-2 px-8  text-lg font-bold"
+            className="text-white red-bg border-0 py-2 px-8  text-lg font-bold cursor-pointer"
           >
             Reserve Now
           </button>

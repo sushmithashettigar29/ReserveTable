@@ -33,7 +33,7 @@ function ContactSection() {
               </h2>
               <a
                 href="mailto:info@myrestaurant.com"
-                className="text-orange-500 leading-relaxed font-medium"
+                className="leading-relaxed font-medium"
               >
                 info@myrestaurant.com
               </a>
@@ -66,8 +66,8 @@ function ContactSection() {
               type="text"
               id="name"
               name="name"
-              placeholder="John Doe"
-              className="w-full bg-gray-100 border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out"
+              placeholder="John Doe "
+              className="w-full bg-white border text-base outline-none py-2 px-3"
             />
           </div>
 
@@ -84,7 +84,7 @@ function ContactSection() {
               id="email"
               name="email"
               placeholder="email@example.com"
-              className="w-full bg-gray-100 border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white border text-base outline-none py-2 px-3"
             />
           </div>
 
@@ -100,17 +100,17 @@ function ContactSection() {
               id="message"
               name="message"
               placeholder="Write your message..."
-              className="w-full bg-gray-100 border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 h-32 text-base outline-none text-gray-700 py-2 px-4 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              className="w-full bg-white border text-base outline-none py-2 px-3"
             ></textarea>
           </div>
 
           {/* Button */}
-          <button className="text-white orange-bg border-0 py-3 px-6 focus:outline-none text-lg font-bold transition duration-200">
+          <button className="text-white orange-bg border-0 py-3 px-6 cursor-pointer text-lg font-bold transition duration-200">
             Send Message
           </button>
 
           <p className="text-xs text-gray-500 mt-4">
-            We’ll get back to you within 24 hours.
+            We'll get back to you within 24 hours.
           </p>
         </div>
       </div>
