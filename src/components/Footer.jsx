@@ -3,14 +3,14 @@ import { ChefHat, Clock, MapPin } from "lucide-react"; // Make sure you have luc
 
 function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-600 py-15 px-25">
+    <footer className="bg-gray-50 text-gray-600 py-15 px-25">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <ChefHat className="h-6 w-6 text-gray-800 orange-text" />
-              <span className="text-xl font-bold red-text title-font">ReserveTable</span>
+              <span className="text-xl font-extrabold red-text">ReserveTable</span>
             </div>
             <p className="text-gray-500">
               Simplifying your dining experience with easy online reservations.

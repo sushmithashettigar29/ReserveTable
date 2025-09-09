@@ -8,13 +8,20 @@ function Navbar() {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <header className="text-gray-600 body-font cream-bg sticky top-0 z-50">
-      <div className="container mx-auto flex flex-wrap py-5 px-25 flex-row items-center justify-between">
-        <Link to="/" className=" flex title-font font-bold items-center space-x-2 text-gray-900">
+    <header className="text-gray-600 body-font cream-bg sticky top-0 z-50 shadow-sm">
+      <div className="container mx-auto flex flex-wrap items-center justify-between 
+                      py-4 px-4 sm:px-6 md:px-8 lg:px-25">
+        
+        {/* Logo */}
+        <Link
+          to="/"
+          className="flex title-font font-bold items-center space-x-2 text-gray-900"
+        >
           <ChefHat className="h-6 w-6 text-gray-800 orange-text" />
           <span className="text-xl font-extrabold red-text">ReserveTable</span>
         </Link>
 
+        {/* Mobile Hamburger */}
         <button
           className="md:hidden inline-flex items-center p-2 ml-3 text-gray-700 hover:text-gray-900 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -38,14 +45,14 @@ function Navbar() {
         <nav className="hidden md:flex md:ml-auto items-center text-base">
           <Link to="/" className="mr-5 hover:text-gray-900 font-bold">Home</Link>
           <Link to="/restaurants" className="mr-5 hover:text-gray-900 font-bold">Restaurants</Link>
-          {/* {user && <span className="mr-5 font-medium">{user.name}</span>} */}
         </nav>
 
+        {/* Desktop Auth Buttons */}
         <div className="hidden md:flex">
           {!user ? (
             <Link
               to="/signin"
-              className="inline-flex font-bold text-white items-center red-bg border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base"
+              className="inline-flex font-bold text-white items-center red-bg border-0 py-1.5 px-4 focus:outline-none hover:bg-gray-200 rounded text-base"
             >
               Login / Signup
             </Link>
@@ -53,13 +60,13 @@ function Navbar() {
             <>
               <Link
                 to="/profile"
-                className="inline-flex items-center text-white font-semibold orange-bg border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base"
+                className="inline-flex items-center text-white font-semibold orange-bg border-0 py-1.5 px-4 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base"
               >
                 Profile
               </Link>
               <button
                 onClick={logout}
-                className="inline-flex items-center cursor-pointer text-white font-semibold red-bg border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base"
+                className="inline-flex items-center cursor-pointer text-white font-semibold red-bg border-0 py-1.5 px-4 focus:outline-none hover:bg-gray-200 rounded text-base"
               >
                 Logout
               </button>

@@ -17,7 +17,7 @@ function RestaurantsSection() {
   };
 
   return (
-    <section className="text-gray-600 body-font w-full bg-gray-50">
+    <section className="text-gray-600 body-font w-full ">
       {/* Full-width orange header */}
       <div className="w-full text-center mt-10">
         <h1 className="sm:text-5xl text-3xl font-extrabold tracking-tight text-gray-900">
@@ -37,7 +37,7 @@ function RestaurantsSection() {
             placeholder="Search restaurants..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-2/3 md:w-1/2 p-3 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="w-2/3 md:w-1/2 p-3 text-base border focus:outline-none"
           />
         </div>
 
@@ -62,16 +62,16 @@ function RestaurantsSection() {
                 <h3 className="text-xs text-gray-500 tracking-wide uppercase mb-1">
                   {res.category}
                 </h3>
-                <h2 className="text-lg font-semibold text-gray-900 leading-snug">
-                  {res.name}
+                <h2 className="text-md font-semibold text-gray-900 leading-snug">
+                  {res.name} - {res.location}
                 </h2>
-                <p className="mt-1 text-sm text-gray-700 font-medium">
+                <p className="mt-1 text-sm red-text font-medium">
                   {res.price}
                 </p>
 
                 {/* Reserve Button */}
                 <button
-                  className="mt-4 w-full orange-bg text-white py-2 px-4 font-medium hover:bg-orange-500 transition"
+                  className="mt-4 w-full orange-bg text-white py-2 px-4 font-medium cursor-pointer"
                   onClick={() => handleReserve(res.name)}
                 >
                   Reserve Table
@@ -80,13 +80,12 @@ function RestaurantsSection() {
 
               {/* Favorite Button */}
               <button
-                className={`absolute top-3 right-3 px-2.5 py-1.5 rounded-full text-sm shadow-sm ${
+                className={`cursor-pointer absolute top-3 right-3 px-2.5 py-1.5 rounded-full text-sm shadow-sm ${
                   user?.favorites?.some((fav) => fav.id === res.id)
                     ? "orange-bg text-white"
                     : "bg-gray-200 text-gray-700"
                 }`}
                 onClick={() => toggleFavorite(res)}
-                title="Add to Favorites"
               >
                 ♥
               </button>

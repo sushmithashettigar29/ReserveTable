@@ -21,34 +21,37 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("user");
   };
 
-const toggleFavorite = (restaurant) => {
-  if (!user) return;
+  const toggleFavorite = (restaurant) => {
+    if (!user) return;
 
-  const isFavorite = user.favorites?.some((fav) => fav.id === restaurant.id);
+    // Ensure we're saving the full restaurant object
+    const isFavorite = user.favorites?.some((fav) => fav.id === restaurant.id);
 
-  const updatedFavorites = isFavorite
-    ? user.favorites.filter((fav) => fav.id !== restaurant.id) // remove
-    : [...(user.favorites || []), restaurant]; // add
+    const updatedFavorites = isFavorite
+      ? user.favorites.filter((fav) => fav.id !== restaurant.id) // remove
+      : [...(user.favorites || []), { ...restaurant }]; // add full object
 
-  const updatedUser = {
-    ...user,
-    favorites: updatedFavorites,
+    const updatedUser = {
+      ...user,
+      favorites: updatedFavorites,
+    };
+
+    // Update state
+    setUser(updatedUser);
+
+    // Persist in localStorage
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+
+    // Update users list in localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const updatedUsers = users.map((u) =>
+      u.email === updatedUser.email ? updatedUser : u
+    );
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
   };
 
-  setUser(updatedUser);
-  localStorage.setItem("user", JSON.stringify(updatedUser));
-
-  // also update in users list
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const updatedUsers = users.map((u) =>
-    u.email === updatedUser.email ? updatedUser : u
-  );
-  localStorage.setItem("users", JSON.stringify(updatedUsers));
-};
-
-
   return (
-    <AuthContext.Provider value={{ user, login, logout , toggleFavorite}}>
+    <AuthContext.Provider value={{ user, login, logout, toggleFavorite }}>
       {children}
     </AuthContext.Provider>
   );
